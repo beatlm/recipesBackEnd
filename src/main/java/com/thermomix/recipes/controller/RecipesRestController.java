@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +21,7 @@ import com.thermomix.recipes.model.Recipe;
 
 @RestController
 public class RecipesRestController {
-	
+
 	/**
 	 * Method that returns a file as FileReseource from path
 	 * @return
@@ -30,24 +33,26 @@ public class RecipesRestController {
 		File file= new File("");
 		return new FileSystemResource(file); 
 	}
-	
+
 	@RequestMapping(value = "/recipes", method = RequestMethod.GET)
-	
-	public ResponseEntity<ListRecipesResponse> listAllRecipes(){
+
+	public ResponseEntity<ListRecipesResponse> listAllRecipes(HttpServletResponse response){
 		ListRecipesResponse list= new ListRecipesResponse();
-		List<Recipe> recipes= new ArrayList();
+		List<Recipe> recipes= new ArrayList<>();
 		Recipe r1= new Recipe();
 		r1.setName("Salmorejo");
 		r1.setComensales(2);
 		String a[] = new String[]{"tomates","Pan blanco del dia anterior","Ajo","Aceite", "Vinagre"};
-		   
+
 		r1.setIngredients(Arrays.asList(a));
 		r1.setPreparingTime(23);
 		r1.setTotalTime(40);
 		recipes.add(r1);
 		list.setRecipes(recipes);
-		return new ResponseEntity<>(list,HttpStatus.OK);
+
 		
+		response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+		return  new ResponseEntity<>(list,HttpStatus.OK);
 	}
 
 }
