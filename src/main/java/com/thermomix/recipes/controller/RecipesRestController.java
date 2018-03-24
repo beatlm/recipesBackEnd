@@ -35,7 +35,6 @@ public class RecipesRestController {
 	}
 
 	@RequestMapping(value = "/recipes", method = RequestMethod.GET)
-
 	public ResponseEntity<ListRecipesResponse> listAllRecipes(HttpServletResponse response){
 		ListRecipesResponse list= new ListRecipesResponse();
 		List<Recipe> recipes= new ArrayList<>();
@@ -53,6 +52,11 @@ public class RecipesRestController {
 		
 		response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
 		return  new ResponseEntity<>(list,HttpStatus.OK);
+	}
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public ResponseEntity<Integer> test(HttpServletResponse response){
+		response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+		return  new ResponseEntity<>(23,HttpStatus.OK);
 	}
 
 }
