@@ -35,8 +35,7 @@ public class RecipesRestController {
 	}
 
 	@RequestMapping(value = "/recipes", method = RequestMethod.GET)
-	public ResponseEntity<ListRecipesResponse> listAllRecipes(HttpServletResponse response){
-		ListRecipesResponse list= new ListRecipesResponse();
+	public ResponseEntity<List<Recipe>> listAllRecipes(HttpServletResponse response){
 		List<Recipe> recipes= new ArrayList<>();
 		Recipe r1= new Recipe();
 		r1.setName("Salmorejo");
@@ -47,11 +46,11 @@ public class RecipesRestController {
 		r1.setPreparingTime(23);
 		r1.setTotalTime(40);
 		recipes.add(r1);
-		list.setRecipes(recipes);
+	
 
 		
 		response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
-		return  new ResponseEntity<>(list,HttpStatus.OK);
+		return  new ResponseEntity<>(recipes,HttpStatus.OK);
 	}
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public ResponseEntity<Integer> test(HttpServletResponse response){
