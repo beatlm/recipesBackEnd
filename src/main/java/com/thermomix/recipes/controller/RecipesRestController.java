@@ -1,19 +1,16 @@
 package com.thermomix.recipes.controller;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thermomix.recipes.model.Recipe;
@@ -21,19 +18,8 @@ import com.thermomix.recipes.model.Recipe;
 @RestController
 public class RecipesRestController {
 
-	/**
-	 * Method that returns a file as FileReseource from path
-	 * @return
-	 */
-	@RequestMapping(value = "/file", method = RequestMethod.GET)
-	@ResponseBody
-	public FileSystemResource getFile() {
 
-		File file= new File("");
-		return new FileSystemResource(file); 
-	}
-
-	@RequestMapping(value = "/recipes", method = RequestMethod.GET)
+	@RequestMapping(value = "/cacas", method = RequestMethod.GET)
 	public ResponseEntity<List<Recipe>> listAllRecipes(HttpServletResponse response){
 		List<Recipe> recipes= new ArrayList<>();
 		Recipe r1= new Recipe();
@@ -53,7 +39,7 @@ public class RecipesRestController {
 	}
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public ResponseEntity<Integer> test(HttpServletResponse response){
-		response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+	//	response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
 		return  new ResponseEntity<>(23,HttpStatus.OK);
 	}
 
