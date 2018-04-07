@@ -6,9 +6,9 @@ spring:
  data: 
   mongodb:
    uri: mongodb://beatlm:beatlm@ds123029.mlab.com:23029/tmrecipes
-   #host: ds123029.mlab.com
-   #authentication-database: 
    database: tmrecipes
    #port: 23029
    
       #mongodb://<dbuser>:<dbpassword>@ds123029.mlab.com:23029/tmrecipes
+ hateoas:
+  use-hal-as-default-json-media-type: false
