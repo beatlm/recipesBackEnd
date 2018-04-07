@@ -4,13 +4,16 @@ import java.util.List;
 //TODO añadir lombok
 public class Recipe {
 	private String name;
-	private List<Object> ingredients;
+	private int comensales;
+	private int totalTime;
+	private int preparingTime;
+/*	private List<Object> ingredients;
 	public List<Object> getIngredients() {
 		return ingredients;
 	}
 	public void setIngredients(List<Object> list) {
 		this.ingredients = list;
-	}
+	}*/
 	public int getComensales() {
 		return comensales;
 	}
@@ -29,9 +32,7 @@ public class Recipe {
 	public void setPreparingTime(int preparingTime) {
 		this.preparingTime = preparingTime;
 	}
-	private int comensales;
-	private int totalTime;
-	private int preparingTime;
+
 	public String getName() {
 		return name;
 	}

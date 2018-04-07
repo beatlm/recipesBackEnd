@@ -1,4 +1,4 @@
-package com.thermomix.recipes.controller;
+package com.thermomix.recipes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

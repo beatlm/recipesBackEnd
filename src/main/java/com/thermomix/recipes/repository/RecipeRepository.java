@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import com.thermomix.recipes.entity.Recipe;
 
-@RepositoryRestResource(collectionResourceRel = "recipe", path = "recipes") 
+@RepositoryRestResource(collectionResourceRel = "recipes", path = "recipes") 
 
 
 public interface RecipeRepository extends PagingAndSortingRepository<Recipe,Long> {
