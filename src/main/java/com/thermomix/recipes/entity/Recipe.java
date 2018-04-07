@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class Recipe {
 	@Id
-	private Object id;
+	private String id;
 
 	private String name;
 	private int amount;
@@ -16,10 +16,10 @@ public class Recipe {
 	private int total;
 	private int preparation;
 	
-	public Object getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(Object id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
