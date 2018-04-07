@@ -13,7 +13,7 @@ import com.thermomix.recipes.entity.Recipe;
 @RepositoryRestResource(collectionResourceRel = "result", path = "recipes") 
 
 @CrossOrigin(origins = "http://localhost:4200")
-public interface RecipeRepository extends PagingAndSortingRepository<Recipe,Long> {
+public interface RecipeRepository extends PagingAndSortingRepository<Recipe,String> {
 	
 	@RestResource( rel="buscarPorNumeroCuenta", path="findByName" )
 	List<Recipe> findByName(@Param("name") String name); 
