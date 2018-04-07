@@ -4,11 +4,13 @@ server:
     
 spring:
  data: 
+  rest:
+   defaultMediaType: application/json
   mongodb:
    uri: mongodb://beatlm:beatlm@ds123029.mlab.com:23029/tmrecipes
    database: tmrecipes
-   #port: 23029
    
       #mongodb://<dbuser>:<dbpassword>@ds123029.mlab.com:23029/tmrecipes
  hateoas:
   use-hal-as-default-json-media-type: false
+  
