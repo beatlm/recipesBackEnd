@@ -13,7 +13,7 @@ import com.thermomix.recipes.entity.Recipe;
 
 @RepositoryRestResource(collectionResourceRel = "result", path = "recipes") 
 
-@CrossOrigin(origins = "http://tm-recipes.firebaseapp.com", methods={RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST})
+@CrossOrigin(origins = {"http://tm-recipes.firebaseapp.com", "http://localhost:4200"}, methods={RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST})
 public interface RecipeRepository extends PagingAndSortingRepository<Recipe,String> {
 	
 	@RestResource( rel="buscarPorNombre", path="findByNameNO" )
