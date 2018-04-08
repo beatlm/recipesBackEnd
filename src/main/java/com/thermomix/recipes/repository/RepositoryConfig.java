@@ -10,6 +10,6 @@ import com.thermomix.recipes.entity.Recipe;
 public class RepositoryConfig extends RepositoryRestConfigurerAdapter {
     @Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-    	config.exposeIdsFor(Recipe.class);
+    	config.exposeIdsFor(Recipe.class);//para devolver los ids de las tablas
     }
 }

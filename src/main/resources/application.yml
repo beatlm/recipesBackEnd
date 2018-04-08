@@ -9,8 +9,4 @@ spring:
   mongodb:
    uri: mongodb://beatlm:beatlm@ds123029.mlab.com:23029/tmrecipes
    database: tmrecipes
-   
-      #mongodb://<dbuser>:<dbpassword>@ds123029.mlab.com:23029/tmrecipes
- hateoas:
-  use-hal-as-default-json-media-type: false
-  
+ 
