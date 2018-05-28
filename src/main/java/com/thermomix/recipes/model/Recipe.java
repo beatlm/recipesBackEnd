@@ -7,13 +7,13 @@ public class Recipe {
 	private int comensales;
 	private int totalTime;
 	private int preparingTime;
-/*	private List<Object> ingredients;
+	private List<Object> ingredients;
 	public List<Object> getIngredients() {
 		return ingredients;
 	}
 	public void setIngredients(List<Object> list) {
 		this.ingredients = list;
-	}*/
+	}
 	public int getComensales() {
 		return comensales;
 	}
