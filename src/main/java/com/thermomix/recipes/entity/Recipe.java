@@ -16,7 +16,7 @@ public class Recipe {
 	private int amount;
 	@DBRef
 	@CascadeSave
-	private Collection<Ingredient> ingredients;
+	private List<Ingredient> ingredients;
 	private int total;
 	private int preparation;
 	
@@ -39,7 +39,7 @@ public class Recipe {
 		this.amount = amount;
 	}
 	
-	public Collection<Ingredient> getIngredients() {
+	public List<Ingredient> getIngredients() {
 		return ingredients;
 	}
 	public void setIngredients(List<Ingredient> ingredients) {
