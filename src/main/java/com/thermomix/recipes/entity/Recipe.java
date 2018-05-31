@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import com.thermomix.recipes.anotation.CascadeSave;
+
 public class Recipe {
 	@Id
 	private String id;
@@ -13,6 +15,7 @@ public class Recipe {
 	private String name;
 	private int amount;
 	@DBRef
+	@CascadeSave
 	private Collection<Ingredient> ingredients;
 	private int total;
 	private int preparation;
