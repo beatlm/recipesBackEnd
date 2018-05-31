@@ -1,5 +1,6 @@
 package com.thermomix.recipes.entity;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -12,7 +13,7 @@ public class Recipe {
 	private String name;
 	private int amount;
 	@DBRef
-	private List<Ingredient> ingredients;
+	private Collection<Ingredient> ingredients;
 	private int total;
 	private int preparation;
 	
@@ -35,7 +36,7 @@ public class Recipe {
 		this.amount = amount;
 	}
 	
-	public List<Ingredient> getIngredients() {
+	public Collection<Ingredient> getIngredients() {
 		return ingredients;
 	}
 	public void setIngredients(List<Ingredient> ingredients) {
