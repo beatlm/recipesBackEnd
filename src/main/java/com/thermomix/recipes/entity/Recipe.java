@@ -14,12 +14,20 @@ public class Recipe {
 
 	private String name;
 	private int amount;
-	@DBRef
-	@CascadeSave
+	//@DBRef
+	//@CascadeSave
 	private List<Ingredient> ingredients;
 	private int total;
 	private int preparation;
+	private List<String> pasos;
+
 	
+	public List<String> getPasos() {
+		return pasos;
+	}
+	public void setPasos(List<String> pasos) {
+		this.pasos = pasos;
+	}
 	public String getId() {
 		return id;
 	}
