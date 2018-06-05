@@ -7,9 +7,7 @@ spring:
   rest:
    defaultMediaType: application/json
   mongodb:
-   uri: mongodb://beatlm:beatlm@ds123029.mlab.com:23029
+   uri: mongodb://beatlm:beatlm@ds123029.mlab.com:23029/tmrecipes
    database: tmrecipes
-   username: knhtnafcqszcva
-   password: 7056b1f1e7b99313af6383983e033b853418fe63bd1286f20b066f2f252eab77
 
    
