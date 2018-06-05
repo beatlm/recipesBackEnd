@@ -7,6 +7,5 @@ spring:
   rest:
    defaultMediaType: application/json
   mongodb:
-   uri: mongodb://beatlm:beatlm@ds123029.mlab.com:23029/tmrecipes
+   uri: mongodb://beatlm:beatlm@ds123029.mlab.com:23029
    database: tmrecipes
- 

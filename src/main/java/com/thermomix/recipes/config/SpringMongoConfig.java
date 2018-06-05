@@ -16,10 +16,10 @@ import com.mongodb.MongoClient;
 @Configuration
 public class SpringMongoConfig extends AbstractMongoConfiguration{
 	
-	@Value("${jsa.mongo.address}")
+	@Value("${spring.data.mongodb.uri}")
 	private String mongoAddress; 
 	
-	@Value("${jsa.mongo.database}")
+	@Value("${spring.data.mongodb.database}")
 	private String mongoDatabase;
 	
 	@Bean
