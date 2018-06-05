@@ -1,12 +1,10 @@
 package com.thermomix.recipes.entity;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 
-import com.thermomix.recipes.anotation.CascadeSave;
+import com.mongodb.gridfs.GridFSDBFile;
 
 public class Recipe {
 	@Id
@@ -14,14 +12,19 @@ public class Recipe {
 
 	private String name;
 	private int amount;
-	//@DBRef
-	//@CascadeSave
 	private List<Ingredient> ingredients;
 	private int total;
 	private int preparation;
 	private List<String> pasos;
+	private GridFSDBFile imagen;
 
 	
+	public GridFSDBFile getImagen() {
+		return imagen;
+	}
+	public void setImagen(GridFSDBFile imagen) {
+		this.imagen = imagen;
+	}
 	public List<String> getPasos() {
 		return pasos;
 	}
