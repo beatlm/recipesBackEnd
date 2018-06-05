@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 
 /**
  * Spring MongoDB configuration file
@@ -17,7 +18,8 @@ import com.mongodb.MongoClient;
 public class SpringMongoConfig extends AbstractMongoConfiguration{
 	
 	@Value("${spring.data.mongodb.uri}")
-	private String mongoAddress; 
+	private String mongoURI; 
+
 	
 	@Value("${spring.data.mongodb.database}")
 	private String mongoDatabase;
@@ -32,8 +34,12 @@ public class SpringMongoConfig extends AbstractMongoConfiguration{
 		return mongoDatabase;
 	}
  
+
 	@Override
+	@Bean
 	public Mongo mongo() throws Exception {
-		return new MongoClient(mongoAddress);
+		MongoClientURI uri = new MongoClientURI(mongoURI);
+
+		return new MongoClient(uri);
 	}
 }
