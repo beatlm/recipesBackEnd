@@ -16,13 +16,13 @@ public class Recipe {
 	private int total;
 	private int preparation;
 	private List<String> pasos;
-	private GridFSDBFile imagen;
+	private String imagen;
 
 	
-	public GridFSDBFile getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
-	public void setImagen(GridFSDBFile imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 	public List<String> getPasos() {

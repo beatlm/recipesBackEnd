@@ -8,6 +8,13 @@ public class Recipe {
 	private int totalTime;
 	private int preparingTime;
 	private List<Object> ingredients;
+	private String imagen;
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 	public List<Object> getIngredients() {
 		return ingredients;
 	}
