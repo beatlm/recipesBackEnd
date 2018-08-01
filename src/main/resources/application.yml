@@ -9,5 +9,19 @@ spring:
   mongodb:
    uri: mongodb://beatlm:beatlm@ds123029.mlab.com:23029/tmrecipes
    database: tmrecipes
+   
+
+facebook:
+ appId: 232250690945412
+ appSecret: 2fd9923273e12a5460570006c6654796
+ 
+application:
+ urlRedirect: localhost:8080/loginOk
+ 
+ management:
+  endpoints:
+   web:
+    cors:
+     allowed-origins: '*'
 
    

@@ -1,7 +1,9 @@
 package com.thermomix.recipes.model;
 
 import java.util.List;
-//TODO añadir lombok
+
+import lombok.Data;
+@Data
 public class Recipe {
 	private String name;
 	private int comensales;
@@ -9,41 +11,5 @@ public class Recipe {
 	private int preparingTime;
 	private List<Object> ingredients;
 	private String imagen;
-	public String getImagen() {
-		return imagen;
-	}
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
-	}
-	public List<Object> getIngredients() {
-		return ingredients;
-	}
-	public void setIngredients(List<Object> list) {
-		this.ingredients = list;
-	}
-	public int getComensales() {
-		return comensales;
-	}
-	public void setComensales(int comensales) {
-		this.comensales = comensales;
-	}
-	public int getTotalTime() {
-		return totalTime;
-	}
-	public void setTotalTime(int totalTime) {
-		this.totalTime = totalTime;
-	}
-	public int getPreparingTime() {
-		return preparingTime;
-	}
-	public void setPreparingTime(int preparingTime) {
-		this.preparingTime = preparingTime;
-	}
-
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	
 }
