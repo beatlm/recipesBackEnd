@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.thermomix.recipes.model.WeeklyPlanner;
 
-@RepositoryRestResource(collectionResourceRel = "result", path = "timeTable") 
+@RepositoryRestResource(collectionResourceRel = "result", path = "planner") 
 
 @CrossOrigin(origins = {"http://localhost:4200", "https://tm-recipes-front.herokuapp.com"}, 
 methods={RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST})
-public interface CalendarRepository extends PagingAndSortingRepository<WeeklyPlanner,String> {
+public interface PlannerRepository extends PagingAndSortingRepository<WeeklyPlanner,String> {
 	
 	@RestResource( rel="buscarPorUsuario", path="findByUserId" )
 	List<WeeklyPlanner> findByUserId(@Param("userId") String userId); 
