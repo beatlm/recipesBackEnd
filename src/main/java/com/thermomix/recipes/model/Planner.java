@@ -4,7 +4,7 @@ import java.util.Date;
 
 import lombok.Data;
 @Data
-public class WeeklyPlanner {
+public class Planner {
 	private String recipeId;
 	private String userId;
 	private Date date;

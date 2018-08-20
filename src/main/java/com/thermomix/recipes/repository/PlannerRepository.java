@@ -10,19 +10,19 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.thermomix.recipes.model.WeeklyPlanner;
+import com.thermomix.recipes.model.Planner;
 
 @RepositoryRestResource(collectionResourceRel = "result", path = "planner") 
 
 @CrossOrigin(origins = {"http://localhost:4200", "https://tm-recipes-front.herokuapp.com"}, 
 methods={RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST})
-public interface PlannerRepository extends PagingAndSortingRepository<WeeklyPlanner,String> {
+public interface PlannerRepository extends PagingAndSortingRepository<Planner,String> {
 	
 	@RestResource( rel="buscarPorUsuario", path="findByUserId" )
-	List<WeeklyPlanner> findByUserId(@Param("userId") String userId); 
+	List<Planner> findByUserId(@Param("userId") String userId); 
 	
 	@RestResource( rel="buscarPorFecha", path="findByDate" )
-	List<WeeklyPlanner> findByDate(@Param("date") Date date); 
+	List<Planner> findByDate(@Param("date") Date date); 
 
 	
 	
