@@ -12,7 +12,7 @@ public class Planner {
 	private String id;
 	private String recipeId;
 	private String userId;
-	 @DateTimeFormat(pattern = "dd/MM/yyyy")
+	 @DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
 
 }
