@@ -17,8 +17,15 @@ public class Recipe {
 	private int preparation;
 	private List<String> pasos;
 	private String imagen;
+	private List <String> tags;
 
 	
+	public List<String> getTags() {
+		return tags;
+	}
+	public void setTags(List<String> tags) {
+		this.tags = tags;
+	}
 	public String getImagen() {
 		return imagen;
 	}
