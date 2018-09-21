@@ -14,7 +14,7 @@ import com.thermomix.recipes.entity.Recipe;
 @RepositoryRestResource(collectionResourceRel = "result", path = "recipes") 
 
 @CrossOrigin(origins = {"http://localhost:4200", "https://tm-recipes-front.herokuapp.com"}, 
-methods={RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST})
+methods={RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST, RequestMethod.PATCH})
 public interface RecipeRepository extends PagingAndSortingRepository<Recipe,String> {
 	
 	@RestResource( rel="buscarPorNombre", path="findByNameNO" )
