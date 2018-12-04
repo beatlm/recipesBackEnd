@@ -24,7 +24,7 @@ public interface RecipeRepository extends PagingAndSortingRepository<Recipe,Stri
 	@RestResource( rel="buscarPorTag", path="findByTag" )
 	//public List<Recipe> findByTag(@Param("tags") String tag);
 	//@Query (value="db.recipe.find( { tags: ?0 } )")
-	  @Query("{ 'tags' : ?0 }")
+	 // @Query("db.recipe.find( { 'tags' : ?0 })")
 
-	public List<Recipe>findByTag(String tag);
+	public List<Recipe>findByTags(String tag);
 }
