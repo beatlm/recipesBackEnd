@@ -20,6 +20,6 @@ public interface RecipeRepository extends PagingAndSortingRepository<Recipe,Stri
 	@RestResource( rel="buscarPorNombre", path="findByNameNO" )
 	List<Recipe> findByName(@Param("name") String name); 
 
-	@RestResource( rel="buscarPorTag", path="findByTag" )
-	public List<Recipe> findByTag(@Param("tags") String tag);
+	//@RestResource( rel="buscarPorTag", path="findByTag" )
+	//public List<Recipe> findByTag(@Param("tags") String tag);
 }
