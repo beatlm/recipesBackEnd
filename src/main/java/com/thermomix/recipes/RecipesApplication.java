@@ -22,7 +22,7 @@ public class RecipesApplication {
 	    config.addAllowedOrigin("https://tm-recipes-front.herokuapp.com"); 
 	    config.addAllowedOrigin("http://localhost:4200");
 	    config.addAllowedOrigin("http://localhost:8080");
-	    //config.addAllowedOrigin("*");
+	    config.addAllowedOrigin("*");
 	    config.addAllowedHeader("*");
 	    config.addAllowedMethod("*");
 	    final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
