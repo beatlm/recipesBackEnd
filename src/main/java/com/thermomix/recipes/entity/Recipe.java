@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
-import com.mongodb.gridfs.GridFSDBFile;
 
 public class Recipe {
 	@Id
