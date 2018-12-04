@@ -2,6 +2,7 @@ package com.thermomix.recipes.repository;
 
 import java.util.List;
 
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -22,5 +23,8 @@ public interface RecipeRepository extends PagingAndSortingRepository<Recipe,Stri
 
 	@RestResource( rel="buscarPorTag", path="findByTag" )
 	//public List<Recipe> findByTag(@Param("tags") String tag);
-	public List<Recipe>findByFirsTags(@Param("tags") String tags);
+	//@Query (value="db.recipe.find( { tags: ?0 } )")
+	  @Query("{ 'tags' : ?0 }")
+
+	public List<Recipe>findByTag(String tag);
 }
