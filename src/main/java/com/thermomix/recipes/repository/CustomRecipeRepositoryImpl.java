@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.query.Query;
 
 import com.thermomix.recipes.entity.Recipe;
 
-public abstract class RecipeRepositoryImpl implements RecipeRepository {
+public abstract class CustomRecipeRepositoryImpl implements CustomRecipeRepository {
 
 
 	@Override
