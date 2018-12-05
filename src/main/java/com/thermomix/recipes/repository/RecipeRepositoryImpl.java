@@ -14,7 +14,7 @@ public abstract class RecipeRepositoryImpl implements RecipeRepository {
 
 
 	@Override
-	public List<Recipe>findByTags(String tag){
+	public List<Recipe>buscarPorTag(String tag){
 		ApplicationContext ctx = new AnnotationConfigApplicationContext();//SpringMongoConfig.class);
 		MongoOperations mongoOperations = (MongoOperations) ctx.getBean("mongoTemplate");
 
