@@ -10,17 +10,20 @@ import org.springframework.data.mongodb.core.query.Query;
 
 import com.thermomix.recipes.entity.Recipe;
 
-public abstract class CustomRecipeRepositoryImpl implements CustomRecipeRepository {
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
+public  class CustomRecipeRepositoryImpl implements CustomRecipeRepository {
 
 
 	@Override
 	public List<Recipe>buscarPorTag(String tag){
+		log.info("Se busca el tag "+tag);
 		ApplicationContext ctx = new AnnotationConfigApplicationContext();//SpringMongoConfig.class);
 		MongoOperations mongoOperations = (MongoOperations) ctx.getBean("mongoTemplate");
-
+		
 		Query q = new Query(Criteria.where("tags").all(tag));
 		List<Recipe> recipes = mongoOperations.find(q, Recipe.class);
-
+		log.info("Se encuentran {} recetas",recipes.size());
 		return recipes;
 	}
 }
