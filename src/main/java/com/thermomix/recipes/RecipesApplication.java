@@ -19,7 +19,8 @@ public class RecipesApplication {
 	  public FilterRegistrationBean<CorsFilter> corsFilter() {
 	    final CorsConfiguration config = new CorsConfiguration();
 	    config.setAllowCredentials(true);
-	    config.addAllowedOrigin("*");
+	    config.addAllowedOrigin("http://localhost:4200");
+	    config.addAllowedOrigin("https://tm-recipes-front.herokuapp.com");
 	    config.addAllowedHeader("*");
 	    config.addAllowedMethod("*");
 	    final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
