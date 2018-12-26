@@ -12,10 +12,8 @@ import com.thermomix.recipes.entity.Recipe;
 
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
-public  class CustomRecipeRepositoryImpl implements CustomRecipeRepository {
+public  class RecipeRepositoryImpl implements CustomRecipeRepository {
 
-
-	@Override
 	public List<Recipe>buscarPorTag(String tag){
 		log.info("Se busca el tag "+tag);
 		ApplicationContext ctx = new AnnotationConfigApplicationContext();//SpringMongoConfig.class);
