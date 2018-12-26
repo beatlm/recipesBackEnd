@@ -10,9 +10,6 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 
 @RepositoryRestResource(collectionResourceRel = "result", path = "planner") 
-
-//@CrossOrigin(origins = {"http://localhost:4200", "https://tm-recipes-front.herokuapp.com"}, 
-//methods={RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST})
 public interface PlannerRepository extends PagingAndSortingRepository<com.thermomix.recipes.entity.Planner,String> {
 	
 	@RestResource( rel="buscarPorUsuario", path="findByUserId" )
