@@ -18,10 +18,13 @@ public  class CustomRecipeRepositoryImpl implements CustomRecipeRepository {
 	public List<Recipe>buscarPorTag(String tag){
 		log.info("Se busca el tag "+tag);
 		ApplicationContext ctx = new AnnotationConfigApplicationContext();//SpringMongoConfig.class);
+		log.info("1 ");
 		MongoOperations mongoOperations = (MongoOperations) ctx.getBean("mongoTemplate");
-		
+		log.info("2");
 		Query q = new Query(Criteria.where("tags").all(tag));
+		log.info("3");
 		List<Recipe> recipes = mongoOperations.find(q, Recipe.class);
+	 
 		log.info("Se encuentran {} recetas",recipes.size());
 		return recipes;
 	}

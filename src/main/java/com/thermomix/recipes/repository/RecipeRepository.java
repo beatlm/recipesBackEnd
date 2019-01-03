@@ -12,8 +12,9 @@ import com.thermomix.recipes.entity.Recipe;
 @RepositoryRestResource(collectionResourceRel = "result", path = "recipes") 
 public interface RecipeRepository extends PagingAndSortingRepository<Recipe,String>, CustomRecipeRepository {
 	
-	@RestResource( rel="buscarPorNombre", path="findByNameNO" )
+	@RestResource( rel="buscarPorNombre", path="findByName" )
 	List<Recipe> findByName(@Param("name") String name); 
+
 
 	@RestResource( rel="buscarPorTag", path="buscarPorTag" )
 	List<Recipe> buscarPorTag(@Param("tag") String tag); 
