@@ -9,6 +9,8 @@ spring:
   mongodb:
    uri: ${MONGO_DB_URI}
    database: ${MONGO_DB_NAME}
+   host: ${MONGO_DB_HOST}
+   port: ${MONGO_DB_PORT}
    
  
  management:

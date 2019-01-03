@@ -17,17 +17,20 @@ import lombok.extern.slf4j.Slf4j;
 public  class CustomRecipeRepositoryImpl implements CustomRecipeRepository {
 @Value("${spring.data.mongodb.database}")
 private String databaseName;
-@Value("${spring.data.mongodb.uri}")
-private String databaseUri;
+@Value("${spring.data.mongodb.port}")
+private Integer databasePort;
+@Value("${spring.data.mongodb.host}")
+private String databaseHost;
+ 
 	@Override
 	public List<Recipe>buscarPorTag(String tag){
 		log.info("Se busca el tag "+tag);
-		//AnnotationConfigApplicationContext  ctx = new AnnotationConfigApplicationContext();//SpringMongoConfig.class);
+	
 		log.info("1 ");
 		//ctx.refresh();
-		log.info("1.5 "+databaseName+" - "+databaseUri);
-		MongoClient client=new MongoClient(databaseUri);
-		MongoOperations mongoOperations = new MongoTemplate(client, databaseName);;//(MongoOperations) ctx.getBean("mongoTemplate");
+		log.info("1.5 "+databaseName+" - "+databaseHost+"  -  "+databasePort);
+		MongoClient client=new MongoClient(databaseHost,databasePort);
+		MongoOperations mongoOperations = new MongoTemplate(client, databaseName);;
 		log.info("2");
 		Query q = new Query(Criteria.where("tags").all(tag));
 		log.info("3");
