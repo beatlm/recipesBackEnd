@@ -11,6 +11,8 @@ spring:
    database: ${MONGO_DB_NAME}
    host: ${MONGO_DB_HOST}
    port: ${MONGO_DB_PORT}
+   user: ${MONGO_DB_USER}
+   pass: ${MONGO_DB_PASS}
    
  
  management:
