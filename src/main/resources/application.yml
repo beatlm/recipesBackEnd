@@ -8,8 +8,7 @@ spring:
    defaultMediaType: application/json
   mongodb:
    uri: ${MONGO_DB_URI}
-  # uri: mongodb://beatlm:beatlm@ds123029.mlab.com:23029/tmrecipes
-   database: tmrecipes
+   database: ${MONGO_DB_NAME}
    
  
  management:
