@@ -26,7 +26,7 @@ public class RecipesController {
     @RequestMapping(value = "/myRecipes", method = RequestMethod.GET)
     public ResponseEntity<List <Recipe>> findByTag(@Param (value="tag") String tag) {
     	log.info("Entra en controlador");
-        return new ResponseEntity ( repository.buscarPorTag(tag), HttpStatus.OK);
+        return new ResponseEntity<> ( repository.query(tag), HttpStatus.OK);
     }
 
 }

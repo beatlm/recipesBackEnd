@@ -12,6 +12,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.thermomix.recipes.entity.Recipe;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 public  class CustomRecipeRepositoryImpl implements CustomRecipeRepository {
 	@Value("${spring.data.mongodb.database}")
 	private String databaseName;
@@ -21,11 +23,15 @@ public  class CustomRecipeRepositoryImpl implements CustomRecipeRepository {
 
 
 	@Override
-	public List<Recipe>buscarPorTag(String tag){
+	public List<Recipe>query(String tag){
+		log.info("Lanzamos consulta");
 		MongoClient client=new  MongoClient(new MongoClientURI(databaseUri));
 		MongoOperations mongoOperations = new MongoTemplate(client, databaseName);
 		Query q = new Query(Criteria.where("tags").all(tag));
-		return  mongoOperations.find(q, Recipe.class);
+		
+		List<Recipe>result=mongoOperations.find(q, Recipe.class);
+		log.info("Fin consulta bd {} resultados",result.size());
+		return  result;
 
 	}
 }

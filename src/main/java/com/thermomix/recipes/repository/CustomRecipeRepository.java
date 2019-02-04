@@ -7,5 +7,5 @@ import com.thermomix.recipes.entity.Recipe;
 
 public interface CustomRecipeRepository {
 
-	public List<Recipe>buscarPorTag(String tag);
+	public List<Recipe>query(String tag);
 }
