@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
 
-import com.thermomix.recipes.entity.Recipe;
 import com.thermomix.recipes.entity.Planner;
+import com.thermomix.recipes.entity.Recipe;
 
 @Configuration
 public class RepositoryConfig extends RepositoryRestConfigurerAdapter {

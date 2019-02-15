@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -16,7 +16,7 @@ public class RecipesApplication {
 		SpringApplication.run(RecipesApplication.class, args);
 	}
 	
-	@Bean
+	/*@Bean
 	  public FilterRegistrationBean<CorsFilter> corsFilter() {
 	    final CorsConfiguration config = new CorsConfiguration();
 	    config.setAllowCredentials(true);
@@ -29,7 +29,10 @@ public class RecipesApplication {
 	    final FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>(new CorsFilter(source));
 	    bean.setOrder(0);
 	    return bean;
-	  }
-	
+	  }*/
+//	@Bean
+//	public BCryptPasswordEncoder passwordEncoder() {
+//	    return new BCryptPasswordEncoder();
+//	}
 	
 }
