@@ -21,7 +21,8 @@ import com.thermomix.recipes.config.ConfigConstant;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 public class JwtAuthenticationFilter extends  UsernamePasswordAuthenticationFilter {
    
 		
